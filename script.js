@@ -47,7 +47,6 @@ async function fetchFoodData() {
 
 document.addEventListener('DOMContentLoaded', fetchFoodData);
 
-// Image Slider
 const slider = document.getElementById('imageSliders');
 const images = slider ? slider.getElementsByTagName('img') : [];
 let currentIndex = 0;
@@ -60,7 +59,7 @@ function nextSlide() {
 }
 
 if (images.length > 0) {
-    setInterval(nextSlide, 6000);
+    setInterval(nextSlide, 1);
 }
 const button = document.getElementById('Clickbutton');
 const foodApiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s='; 
@@ -69,7 +68,7 @@ let cart = [];
 
 if (button) {
     button.addEventListener('click', function() {
-        const newWindow = window.open('', '_blank');
+        const newWindow = window.open('',);
         newWindow.document.write(`
             <html>
                 <head>
@@ -96,24 +95,54 @@ if (button) {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
+                            justify-content: center;  
                             margin: 15px;
                             background: rgba(0, 0, 0, 0.6);
                             border-radius: 10px;
-                            padding: 10px;
+                            padding: 50px;
                             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
                             transition: transform 0.3s ease;
-                        }
-
-                        .food-item:hover {
-                            transform: scale(1.05);
+                            text-align: center; 
                         }
 
                         .food-item img {
-                            width: 100px;
-                            height: 100px;
+                            width: 200px;  
+                            height: auto;
                             object-fit: cover;
                             border-radius: 8px;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
                         }
+
+                        .food-item div h3 {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            margin-top: 10px;
+                            text-align: center;
+                        }
+
+                        .food-item div p {
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            color: #f39c12;
+                            margin: 5px 0;
+                            text-align: center;
+                        }
+
+                    @media (max-width: 768px) {
+                        .food-item img {
+                            width: 80%;  
+                            max-width: 250px;  
+                        }
+
+                        .food-item div h3 {
+                            font-size: 1.2rem;
+                        }
+
+                        .food-item div p {
+                            font-size: 1rem;
+                        }
+                    }
+
 
                         .food-list {
                             display: flex;
