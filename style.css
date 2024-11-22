@@ -269,5 +269,79 @@ body {
 }
 #youtube {
     width: 100%;
-    height: 500px;
+    height: 50vh;
   }
+
+    form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 30vh;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    justify-content: center;
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Ew0FvnqNWJMocGX_wjelc8KpCsTR0U9B6Q&s);
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+input[type="email"], input[type="password"] {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #065b0e;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d1a; 
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+.signup-head{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.differ{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
