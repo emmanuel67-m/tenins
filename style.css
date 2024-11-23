@@ -43,18 +43,19 @@ body {
 }
 
 #loginButtonL:hover, #signInButtonS:hover {
-    background-color: #2980b9;
+    background-color: rgb(182, 32, 32);
 }
 
 .meanqee {
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
 .meanqee i {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     color: #fff;
+    color: #ff0000;
 }
 
 .headmeanqee {
@@ -449,5 +450,5 @@ a:hover {
   }
   
   #myBtn:hover {
-    background-color: #555;
+    background-color: rgb(118, 12, 12);
   } 

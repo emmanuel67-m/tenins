@@ -1,4 +1,3 @@
-// Login and Signup Button Event Handlers
 const loginButton = document.getElementById('loginButtonL');
 const signInButton = document.getElementById('signInButtonS');
 
@@ -14,7 +13,6 @@ if (signInButton) {
     });
 }
 
-// Fetch Food Data
 async function fetchFoodData() {
     try {
         const mealCount = 20;
@@ -248,26 +246,26 @@ if (button) {
 
                         function checkout() {
                             alert('Total: $' + total.toFixed(2) + '. Thank you for your purchase!');
-                            cart.length = 0;  // Clear the cart
-                            updateCart();  // Update cart UI
+                            cart.length = 0;  
+                            updateCart();  
                         }
 
-                        // Fetch food data from API
+                        
                         fetch('${foodApiUrl}')
                             .then(response => response.json())
                             .then(data => {
                                 if (data.meals) {
-                                    // Display up to 50 food items
+                                   
                                     let count = 0;
                                     data.meals.forEach(item => {
-                                        if (count >= 50) return; // Limit to 50 items
+                                        if (count >= 50) return;
                                         count++;
 
                                         const foodDiv = document.createElement('div');
                                         foodDiv.classList.add('food-item');
 
-                                        // Simulated price (you can replace this with actual pricing logic)
-                                        const foodPrice = (Math.random() * 20 + 10).toFixed(2);  // Price between $10 and $30
+                                        
+                                        const foodPrice = (Math.random() * 20 + 10).toFixed(2);  
 
                                         foodDiv.innerHTML = \`
                                             <img src="\${item.strMealThumb}" alt="\${item.strMeal}">
@@ -289,10 +287,10 @@ if (button) {
                                 foodList.innerHTML = '<p>There was an error fetching food items.</p>';
                             });
 
-                        // Checkout Button Event Listener
+                       
                         checkoutBtn.addEventListener('click', checkout);
 
-                        // Order Button Event Listener
+                       
                         orderBtn.addEventListener('click', () => {
                             alert('Order confirmed! Proceeding to checkout.');
                             checkout();
@@ -334,7 +332,6 @@ function onPlayerStateChange(event) {
   }
 }
 
-// Scroll to Top Button
 let mybutton = document.getElementById("myBtn");
 
 if (mybutton) {
