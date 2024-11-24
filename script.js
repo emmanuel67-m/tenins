@@ -310,7 +310,7 @@ function onYouTubeIframeAPIReady() {
   var player = new YT.Player('youtube', {
     videoId: videoId,
     playerVars: {
-      autoplay: 1,
+      autoplay: 0,
       loop: 1,
       rel: 0,
       playlist: videoId
