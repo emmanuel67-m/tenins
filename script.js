@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', fetchFoodData);
 
 const slider = document.getElementById('imageSliders');
 const images = slider ? slider.getElementsByTagName('img') : [];
-let currentIndex = 0;
+let currentIndex = 31;
 
 function nextSlide() {
     if (images.length > 0) {
@@ -74,137 +74,158 @@ if (button) {
                     <link rel="stylesheet" href="style.css">
                     <style>
                        
-                        body {
-                            font-family: Arial, sans-serif;
-                            margin: 0;
-                            padding: 0;
-                            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0fSQhOcHkUBvkBtmMzL3wD4gn-H4n5tgonQ&s'); 
-                            background-size: cover;
-                            background-position: center;
-                            color: white;
-                        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://media.istockphoto.com/id/538674832/photo/seafood-dish-top-view-with-copy-space-at-tablet.webp?a=1&b=1&s=612x612&w=0&k=20&c=BnSu1F5tJmHz6P4sldstqJehfbi5-Tt6MW9fNSRHrqM='); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-                        h1 {
-                            text-align: center;
-                            font-size: 3rem;
-                        }
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
 
-                        .food-item {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;  
-                            margin: 15px;
-                            background: rgba(0, 0, 0, 0.6);
-                            border-radius: 10px;
-                            padding: 50px;
-                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                            transition: transform 0.3s ease;
-                            text-align: center; 
-                        }
+.food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    margin: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center; 
+    max-width: 300px; 
+    width: 100%;
+}
 
-                        .food-item img {
-                            width: 200px;  
-                            height: auto;
-                            object-fit: cover;
-                            border-radius: 8px;
-                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                        }
+.food-item img {
+    width: 100%;
+    max-width: 200px; 
+    height: auto;
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px; 
+}
 
-                        .food-item div h3 {
-                            font-size: 1.5rem;
-                            font-weight: bold;
-                            margin-top: 10px;
-                            text-align: center;
-                        }
+.food-item div h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
 
-                        .food-item div p {
-                            font-size: 1.2rem;
-                            font-weight: bold;
-                            color: #f39c12;
-                            margin: 5px 0;
-                            text-align: center;
-                        }
+.food-item div p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f39c12;
+    margin: 5px 0;
+    text-align: center;
+}
 
-                    @media (max-width: 768px) {
-                        .food-item img {
-                            width: 80%;  
-                            max-width: 250px;  
-                        }
+.food-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
 
-                        .food-item div h3 {
-                            font-size: 1.2rem;
-                        }
+.cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 250px;
+}
 
-                        .food-item div p {
-                            font-size: 1rem;
-                        }
-                    }
+.cart h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
 
+.cart ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-                        .food-list {
-                            display: flex;
-                            flex-wrap: wrap;
-                            justify-content: space-around;
-                            padding: 20px;
-                        }
+.cart ul li {
+    margin: 5px 0;
+    font-size: 1rem;
+}
 
-                        .cart {
-                            position: fixed;
-                            top: 20px;
-                            right: 20px;
-                            background-color: rgba(0, 0, 0, 0.7);
-                            color: white;
-                            padding: 15px;
-                            border-radius: 8px;
-                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-                            width: 250px;
-                        }
+.cart button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
 
-                        .cart h3 {
-                            margin: 0;
-                            font-size: 1.5rem;
-                        }
+.cart button:hover {
+    background-color: #218838;
+}
 
-                        .cart ul {
-                            list-style-type: none;
-                            padding: 0;
-                        }
+.order-btn {
+    background-color: #17a2b8;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+}
 
-                        .cart ul li {
-                            margin: 5px 0;
-                            font-size: 1rem;
-                        }
+.order-btn:hover {
+    background-color: #138496;
+}
 
-                        .cart button {
-                            background-color: #28a745;
-                            color: white;
-                            border: none;
-                            padding: 10px;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            width: 100%;
-                        }
+@media (max-width: 768px) {
+    .food-item img {
+        width: 80%;
+        max-width: 250px;
+    }
 
-                        .cart button:hover {
-                            background-color: #218838;
-                        }
+    .food-item div h3 {
+        font-size: 1.2rem;
+    }
 
-                        .order-btn {
-                            background-color: #17a2b8;
-                            padding: 10px 20px;
-                            border: none;
-                            color: white;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            margin-top: 10px;
-                            width: 100%;
-                            font-size: 16px;
-                        }
+    .food-item div p {
+        font-size: 1rem;
+    }
+}
 
-                        .order-btn:hover {
-                            background-color: #138496;
-                        }
+@media (max-width: 480px) {
+    .food-item img {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    .food-item div h3 {
+        font-size: 1rem;
+    }
+
+    .food-item div p {
+        font-size: 0.9rem;
+    }
+}
+
                     </style>
                 </head>
                 <body>
@@ -233,7 +254,7 @@ if (button) {
                         }
 
                         function updateCart() {
-                            cartItems.innerHTML = ''; // Clear cart items
+                            cartItems.innerHTML = ''; 
                             total = 0;
                             cart.forEach(item => {
                                 const listItem = document.createElement('li');

@@ -2,14 +2,14 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     height: 100vh;
-   
+
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
 .firstmain {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDPEeRw61ntO8y0F_lKFar5WzS0Tqfiy8GFg&s);
+    background-image: url(backg.jpg);
     width: 100%;
     height: 80vh;
     background-size: cover;
@@ -30,7 +30,8 @@ body {
     z-index: 1000;
 }
 
-#loginButtonL, #signInButtonS {
+#loginButtonL,
+#signInButtonS {
     background-color: red;
     color: white;
     padding: 10px 20px;
@@ -42,7 +43,8 @@ body {
     margin: 5px;
 }
 
-#loginButtonL:hover, #signInButtonS:hover {
+#loginButtonL:hover,
+#signInButtonS:hover {
     background-color: rgb(182, 32, 32);
 }
 
@@ -66,71 +68,78 @@ body {
 }
 
 #foodContainer {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 15px; 
+    padding: 60px 30px; 
     margin-top: 20px;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     text-align: center;
     color: #333;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
 }
 
 #foodList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 30px; 
+    margin-top: 20px; 
 }
 
 .foodItem {
     background: #f5f5f5;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 15px; 
+    padding: 20px; 
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .foodItem img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: 250px; 
+    object-fit: cover; 
     border-radius: 10px;
+    margin-bottom: 15px; 
 }
 
 .foodItem h3 {
-    font-size: 1.2rem;
+    font-size: 1.6rem; 
     margin-top: 10px;
     color: #333;
+    font-weight: bold;
 }
 
 .foodItem p {
-    font-size: 0.9rem;
+    font-size: 1rem; 
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+
 .foodItem:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 @media screen and (max-width: 768px) {
-    .meanqee i {
-        font-size: 2rem;
-    }
-
-    .headmeanqee {
-        font-size: 2.5rem;
-    }
-
     #foodList {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     #foodContainer {
-        width: 95%;
+        padding: 50px 15px;
     }
 
     .foodItem {
-        padding: 15px;
+        padding: 20px; 
+    }
+
+    .foodItem h3 {
+        font-size: 1.4rem; 
+    }
+
+    .foodItem p {
+        font-size: 1rem; 
     }
 }
 
@@ -139,26 +148,31 @@ body {
         grid-template-columns: 1fr; 
     }
 
-    .meanqee {
-        font-size: 1.5rem;
-    }
-
-    .headmeanqee {
-        font-size: 2rem;
+    #foodContainer {
+        padding: 40px 10px; 
     }
 
     .foodItem {
-        padding: 10px;
+        padding: 15px; 
+    }
+
+    .foodItem h3 {
+        font-size: 1.2rem; 
+    }
+
+    .foodItem p {
+        font-size: 0.9rem; 
     }
 }
 
+
 .imagecontainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
     padding: 20px;
     width: 100%;
-    max-width: 1400px; 
+    max-width: 1400px;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -166,29 +180,29 @@ body {
 .imageitem {
     position: relative;
     overflow: hidden;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .imageitem img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: transform 0.3s ease-in-out; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
 }
 
 .imageitem img:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {
     .imagecontainer {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 480px) {
     .imagecontainer {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 }
 
@@ -201,9 +215,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 #imageSliders {
     display: flex;
-    transition: transform 3s ease-in-out; 
+    transition: transform 3s ease-in-out;
 }
 
 #imageSliders img {
@@ -214,7 +229,7 @@ body {
 }
 
 .slider {
-    transition: transform 0.5s ease-in-out; 
+    transition: transform 0.5s ease-in-out;
 }
 
 body {
@@ -332,7 +347,7 @@ body {
     text-align: center;
     width: 150px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 .food-item img {
@@ -356,15 +371,16 @@ body {
 .food-item button:hover {
     background-color: #0056b3;
 }
+
 #youtube {
     width: 100%;
     height: 50vh;
-  }
+}
 
-    form {
+form {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 100px;
     height: 30vh;
     margin: 0 auto;
     padding: 20px;
@@ -373,14 +389,15 @@ body {
     text-align: center;
     background-color: white;
     justify-content: center;
-    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Ew0FvnqNWJMocGX_wjelc8KpCsTR0U9B6Q&s);
+    background-image: url(https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJhY2slMjBiYWNrZ3JvdW5kJTIwZm9yJTIwbG9naW4lMjBmb3IlMjBmb29kfGVufDB8fDB8fHww);
     width: 100%;
     height: 50vh;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-input[type="email"], input[type="password"] {
+input[type="email"],
+input[type="password"] {
     padding: 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -402,7 +419,7 @@ button {
 }
 
 button:hover {
-    background-color: #004d1a; 
+    background-color: #004d1a;
 }
 
 a {
@@ -415,6 +432,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
 @media (max-width: 600px) {
     form {
         width: 90%;
@@ -425,14 +443,17 @@ a:hover {
         font-size: 14px;
     }
 }
-.signup-head{
+
+.signup-head {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-.differ{
+
+.differ {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #myBtn {
     display: none;
     position: fixed;
@@ -447,8 +468,8 @@ a:hover {
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
-  }
-  
-  #myBtn:hover {
+}
+
+#myBtn:hover {
     background-color: rgb(118, 12, 12);
-  } 
+}
