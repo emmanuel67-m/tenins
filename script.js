@@ -47,18 +47,40 @@ document.addEventListener('DOMContentLoaded', fetchFoodData);
 
 const slider = document.getElementById('imageSliders');
 const images = slider ? slider.getElementsByTagName('img') : [];
-let currentIndex = 31;
+let currentIndex = 0; 
+let imageCount = images.length;
+
+if (imageCount > 0) {
+    Array.from(images).forEach(image => {
+        const clone = image.cloneNode(true); 
+        slider.appendChild(clone); 
+    });
+
+    imageCount *= 2;
+}
 
 function nextSlide() {
     if (images.length > 0) {
-        currentIndex = (currentIndex + 1) % images.length;
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentIndex = (currentIndex + 1) % imageCount; 
+
+        if (currentIndex === 0) {
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(0%)`;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+            }, 50); 
+        } else {
+            slider.style.transition = 'transform 0.5s ease-in-out';
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`; 
+        }
     }
 }
-
 if (images.length > 0) {
-    setInterval(nextSlide, 1);
+    setInterval(nextSlide, 2000); 
 }
+
+
+
 const button = document.getElementById('Clickbutton');
 const foodApiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s='; 
 
@@ -371,3 +393,15 @@ if (mybutton) {
         document.documentElement.scrollTop = 0;
     }
 }
+function rateRecipe(rating) {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+      if (index < rating) {
+        star.classList.add('selected');
+      } else {
+        star.classList.remove('selected');
+      }
+    });
+
+    document.getElementById('rating-value').innerText = rating;
+  }

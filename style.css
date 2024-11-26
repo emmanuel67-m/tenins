@@ -473,3 +473,6 @@ a:hover {
 #myBtn:hover {
     background-color: rgb(118, 12, 12);
 }
+.rating { display: flex; }
+    .star { font-size: 30px; cursor: pointer; color: #ccc; }
+    .star.selected { color: gold; }
